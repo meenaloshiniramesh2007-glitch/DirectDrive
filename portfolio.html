@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="P.Ramesh - Professional Driver with 15+ Years Experience in Coimbatore, Tamil Nadu. Safe, Reliable, Affordable travel for families, businesses and outstation trips." />
+  <title>P.Ramesh | Professional Driver – Coimbatore</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --navy: #0a1628;
+      --navy-light: #1a2d4f;
+      --gold: #c9a84c;
+      --gold-light: #e8c76a;
+      --white: #ffffff;
+      --gray: #f8f9fa;
+      --text: #333333;
+      --text-light: #666666;
+      --shadow: 0 8px 32px rgba(10,22,40,0.12);
+      --radius: 16px;
+      --transition: all 0.3s cubic-bezier(0.4,0,0.2,1);
+    }
+    * { margin:0; padding:0; box-sizing:border-box; }
+    html { scroll-behavior: smooth; }
+    body { font-family:'Poppins',sans-serif; color:var(--text); background:var(--white); overflow-x:hidden; }
+
+    /* NAVBAR */
+    nav {
+      position: fixed; top:0; width:100%; z-index:1000;
+      background: rgba(10,22,40,0.97);
+      backdrop-filter: blur(12px);
+      padding: 0 5%;
+      display: flex; align-items:center; justify-content:space-between;
+      height: 70px;
+      box-shadow: 0 2px 20px rgba(0,0,0,0.3);
+    }
+    .nav-logo { color:var(--gold); font-size:1.4rem; font-weight:700; letter-spacing:1px; }
+    .nav-logo span { color:var(--white); }
+    .nav-links { display:flex; gap:28px; list-style:none; }
+    .nav-links a { color:rgba(255,255,255,0.85); text-decoration:none; font-size:0.9rem; font-weight:500; transition:var(--transition); }
+    .nav-links a:hover { color:var(--gold); }
+    .nav-cta {
+      background: linear-gradient(135deg,var(--gold),var(--gold-light));
+      color:var(--navy) !important; padding:8px 20px; border-radius:50px;
+      font-weight:600 !important;
+    }
+    .nav-cta:hover { transform:translateY(-2px); box-shadow:0 4px 15px rgba(201,168,76,0.4); }
+    .hamburger { display:none; flex-direction:column; cursor:pointer; gap:5px; }
+    .hamburger span { width:25px; height:2px; background:var(--white); border-radius:2px; transition:var(--transition); }
+
+    /* HERO */
+    .hero {
+      min-height: 100vh;
+      background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 60%, #1e3a6e 100%);
+      display: flex; align-items: center;
+      padding: 100px 5% 60px;
+      position: relative; overflow:hidden;
+    }
+    .hero::before {
+      content:''; position:absolute; top:-50%; right:-20%;
+      width:600px; height:600px;
+      background: radial-gradient(circle, rgba(201,168,76,0.12) 0%, transparent 70%);
+      border-radius:50%;
+    }
+    .hero-content { flex:1; max-width:600px; z-index:2; }
+    .hero-badge {
+      display:inline-flex; align-items:center; gap:8px;
+      background:rgba(201,168,76,0.15); border:1px solid rgba(201,168,76,0.4);
+      color:var(--gold); padding:6px 18px; border-radius:50px;
+      font-size:0.82rem; font-weight:600; letter-spacing:1px;
+      margin-bottom:24px; text-transform:uppercase;
+    }
+    .hero h1 {
+      font-size: clamp(2rem,4vw,3.2rem);
+      color:var(--white); font-weight:800; line-height:1.2;
+      margin-bottom:20px;
+    }
+    .hero h1 span { color:var(--gold); }
+    .hero p {
+      color:rgba(255,255,255,0.78); font-size:1rem; line-height:1.8;
+      margin-bottom:36px; max-width:520px;
+    }
+    .hero-btns { display:flex; gap:16px; flex-wrap:wrap; }
+    .btn-primary {
+      background: linear-gradient(135deg,var(--gold),var(--gold-light));
+      color:var(--navy); padding:14px 32px; border-radius:50px;
+      font-weight:700; font-size:0.95rem; text-decoration:none;
+      display:inline-flex; align-items:center; gap:8px;
+      transition:var(--transition); border:none; cursor:pointer;
+    }
+    .btn-primary:hover { transform:translateY(-3px); box-shadow:0 8px 25px rgba(201,168,76,0.45); }
+    .btn-secondary {
+      background: transparent; color:var(--white);
+      padding:14px 32px; border-radius:50px;
+      font-weight:600; font-size:0.95rem; text-decoration:none;
+      display:inline-flex; align-items:center; gap:8px;
+      border:2px solid rgba(255,255,255,0.4);
+      transition:var(--transition);
+    }
+    .btn-secondary:hover { border-color:var(--gold); color:var(--gold); transform:translateY(-3px); }
+    .btn-whatsapp {
+      background: #25D366; color:var(--white);
+      padding:14px 32px; border-radius:50px;
+      font-weight:600; font-size:0.95rem; text-decoration:none;
+      display:inline-flex; align-items:center; gap:8px;
+      transition:var(--transition);
+    }
+    .btn-whatsapp:hover { background:#1fba5a; transform:translateY(-3px); box-shadow:0 8px 25px rgba(37,211,102,0.35); }
+    .hero-image {
+      flex:1; display:flex; justify-content:center; align-items:center;
+      z-index:2; max-width:480px;
+    }
+    .hero-img-wrapper {
+      width:360px; height:400px;
+      background: linear-gradient(135deg, rgba(201,168,76,0.2), rgba(30,58,110,0.5));
+      border-radius:30px; border:2px solid rgba(201,168,76,0.35);
+      display:flex; align-items:center; justify-content:center;
+      position:relative; overflow:hidden;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+    }
+    .hero-img-wrapper img {
+      width:100%; height:100%; object-fit:cover; border-radius:28px;
+    }
+    .hero-img-placeholder {
+      text-align:center; color:rgba(255,255,255,0.5);
+    }
+    .hero-img-placeholder i { font-size:5rem; color:var(--gold); opacity:0.6; margin-bottom:12px; display:block; }
+    .hero-img-placeholder p { font-size:0.85rem; }
+    .hero-stats {
+      display:flex; gap:30px; margin-top:40px; flex-wrap:wrap;
+    }
+    .hero-stat { text-align:center; }
+    .hero-stat .num { font-size:1.8rem; font-weight:800; color:var(--gold); display:block; }
+    .hero-stat .label { font-size:0.75rem; color:rgba(255,255,255,0.6); text-transform:uppercase; letter-spacing:1px; }
+
+    /* SECTIONS */
+    section { padding:90px 5%; }
+    .section-tag {
+      display:inline-block; background:rgba(201,168,76,0.12);
+      color:var(--gold); border:1px solid rgba(201,168,76,0.3);
+      padding:5px 16px; border-radius:50px; font-size:0.78rem;
+      font-weight:600; text-transform:uppercase; letter-spacing:1.5px;
+      margin-bottom:14px;
+    }
+    .section-title {
+      font-size:clamp(1.7rem,3vw,2.4rem); font-weight:800;
+      color:var(--navy); line-height:1.25; margin-bottom:14px;
+    }
+    .section-title span { color:var(--gold); }
+    .section-sub { color:var(--text-light); font-size:1rem; line-height:1.7; max-width:580px; }
+    .section-header { text-align:center; margin-bottom:60px; }
+    .section-header .section-sub { margin:0 auto; }
+    .divider {
+      width:60px; height:4px;
+      background:linear-gradient(90deg,var(--gold),var(--gold-light));
+      border-radius:2px; margin:14px auto 0;
+    }
+
+    /* ABOUT */
+    .about { background:var(--gray); }
+    .about-grid { display:grid; grid-template-columns:1fr 1fr; gap:60px; align-items:center; }
+    .about-img-wrapper {
+      background:linear-gradient(135deg,var(--navy),var(--navy-light));
+      border-radius:var(--radius); height:420px;
+      display:flex; align-items:center; justify-content:center;
+      border:2px solid rgba(201,168,76,0.25);
+      box-shadow:var(--shadow); overflow:hidden;
+    }
+    .about-img-wrapper img { width:100%; height:100%; object-fit:cover; }
+    .about-img-ph { text-align:center; color:rgba(255,255,255,0.5); }
+    .about-img-ph i { font-size:4rem; color:var(--gold); opacity:0.5; margin-bottom:10px; display:block; }
+    .about-points { display:flex; flex-direction:column; gap:16px; margin-top:28px; }
+    .about-point {
+      display:flex; align-items:flex-start; gap:14px;
+      background:var(--white); padding:16px 20px; border-radius:12px;
+      box-shadow:0 2px 12px rgba(0,0,0,0.06); border-left:4px solid var(--gold);
+    }
+    .about-point i { color:var(--gold); font-size:1.2rem; margin-top:2px; flex-shrink:0; }
+    .about-point strong { display:block; font-size:0.92rem; color:var(--navy); margin-bottom:2px; }
+    .about-point span { font-size:0.83rem; color:var(--text-light); }
+
+    /* STATS */
+    .stats { background:linear-gradient(135deg,var(--navy),var(--navy-light)); }
+    .stats-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:30px; }
+    .stat-card {
+      text-align:center; padding:40px 20px;
+      background:rgba(255,255,255,0.06); border-radius:var(--radius);
+      border:1px solid rgba(201,168,76,0.2);
+      transition:var(--transition);
+    }
+    .stat-card:hover { background:rgba(201,168,76,0.1); transform:translateY(-6px); }
+    .stat-card i { font-size:2.2rem; color:var(--gold); margin-bottom:16px; display:block; }
+    .stat-card .stat-num { font-size:2.4rem; font-weight:800; color:var(--white); margin-bottom:8px; }
+    .stat-card .stat-label { color:rgba(255,255,255,0.65); font-size:0.85rem; }
+
+    /* SERVICES */
+    .services-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:24px; }
+    .service-card {
+      background:var(--white); border-radius:var(--radius); padding:32px 24px;
+      box-shadow:var(--shadow); border:1px solid rgba(0,0,0,0.06);
+      transition:var(--transition); text-align:center;
+    }
+    .service-card:hover { transform:translateY(-8px); box-shadow:0 20px 50px rgba(10,22,40,0.15); border-color:var(--gold); }
+    .service-icon {
+      width:70px; height:70px;
+      background:linear-gradient(135deg,var(--navy),var(--navy-light));
+      border-radius:50%; display:flex; align-items:center; justify-content:center;
+      margin:0 auto 20px;
+    }
+    .service-icon i { font-size:1.6rem; color:var(--gold); }
+    .service-card h3 { font-size:1rem; color:var(--navy); font-weight:700; margin-bottom:10px; }
+    .service-card p { font-size:0.83rem; color:var(--text-light); line-height:1.6; }
+
+    /* WHY CHOOSE ME */
+    .why { background:var(--gray); }
+    .why-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:20px; }
+    .why-card {
+      background:var(--white); border-radius:var(--radius); padding:28px 22px;
+      box-shadow:0 4px 16px rgba(0,0,0,0.07);
+      display:flex; align-items:flex-start; gap:16px;
+      transition:var(--transition); border:1px solid transparent;
+    }
+    .why-card:hover { border-color:var(--gold); transform:translateY(-4px); }
+    .why-icon {
+      width:48px; height:48px; flex-shrink:0;
+      background:linear-gradient(135deg,rgba(201,168,76,0.15),rgba(201,168,76,0.05));
+      border-radius:12px; display:flex; align-items:center; justify-content:center;
+      border:1px solid rgba(201,168,76,0.3);
+    }
+    .why-icon i { color:var(--gold); font-size:1.1rem; }
+    .why-card h3 { font-size:0.92rem; font-weight:700; color:var(--navy); margin-bottom:4px; }
+    .why-card p { font-size:0.8rem; color:var(--text-light); line-height:1.5; }
+
+    /* SKILLS */
+    .skills-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:28px; max-width:800px; margin:0 auto; }
+    .skill-item { }
+    .skill-header { display:flex; justify-content:space-between; margin-bottom:10px; }
+    .skill-header span { font-size:0.9rem; font-weight:600; color:var(--navy); }
+    .skill-header .pct { color:var(--gold); font-weight:700; }
+    .skill-bar { background:#e8edf5; border-radius:50px; height:10px; overflow:hidden; }
+    .skill-fill {
+      height:100%; border-radius:50px;
+      background:linear-gradient(90deg,var(--navy),var(--gold));
+      width:0; transition:width 1.5s cubic-bezier(0.4,0,0.2,1);
+    }
+
+    /* GALLERY */
+    .gallery { background:var(--gray); }
+    .gallery-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:20px; }
+    .gallery-item {
+      border-radius:var(--radius); overflow:hidden;
+      background:linear-gradient(135deg,var(--navy),var(--navy-light));
+      height:200px; display:flex; align-items:center; justify-content:center;
+      cursor:pointer; transition:var(--transition); border:2px solid rgba(201,168,76,0.2);
+    }
+    .gallery-item:hover { transform:scale(1.04); border-color:var(--gold); }
+    .gallery-item img { width:100%; height:100%; object-fit:cover; }
+    .gallery-ph { text-align:center; color:rgba(255,255,255,0.5); }
+    .gallery-ph i { font-size:2rem; color:var(--gold); opacity:0.5; margin-bottom:8px; display:block; }
+    .gallery-ph p { font-size:0.75rem; }
+
+    /* TESTIMONIALS */
+    .testimonials-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:28px; }
+    .testimonial-card {
+      background:var(--white); border-radius:var(--radius); padding:32px;
+      box-shadow:var(--shadow); border:1px solid rgba(0,0,0,0.06);
+      transition:var(--transition);
+    }
+    .testimonial-card:hover { transform:translateY(-6px); border-color:var(--gold); }
+    .stars { color:var(--gold); font-size:1rem; margin-bottom:16px; }
+    .testimonial-card p { font-size:0.88rem; color:var(--text-light); line-height:1.7; font-style:italic; margin-bottom:20px; }
+    .reviewer { display:flex; align-items:center; gap:12px; }
+    .reviewer-avatar {
+      width:44px; height:44px; border-radius:50%;
+      background:linear-gradient(135deg,var(--navy),var(--gold));
+      display:flex; align-items:center; justify-content:center;
+      color:var(--white); font-weight:700; font-size:1rem; flex-shrink:0;
+    }
+    .reviewer-name { font-weight:700; font-size:0.9rem; color:var(--navy); }
+    .reviewer-loc { font-size:0.78rem; color:var(--text-light); }
+
+    /* CONTACT */
+    .contact { background:linear-gradient(135deg,var(--navy),var(--navy-light)); }
+    .contact .section-title { color:var(--white); }
+    .contact .section-sub { color:rgba(255,255,255,0.65); }
+    .contact-grid { display:grid; grid-template-columns:1fr 1fr; gap:60px; align-items:start; margin-top:50px; }
+    .contact-info { display:flex; flex-direction:column; gap:24px; }
+    .contact-item {
+      display:flex; align-items:center; gap:16px;
+      background:rgba(255,255,255,0.07); padding:20px 24px;
+      border-radius:14px; border:1px solid rgba(201,168,76,0.2);
+    }
+    .contact-item i { font-size:1.4rem; color:var(--gold); flex-shrink:0; }
+    .contact-item strong { display:block; color:var(--white); font-size:0.9rem; margin-bottom:3px; }
+    .contact-item span { color:rgba(255,255,255,0.65); font-size:0.85rem; }
+    .contact-btns { display:flex; flex-direction:column; gap:16px; }
+    .contact-btns a {
+      display:flex; align-items:center; gap:14px;
+      padding:18px 28px; border-radius:14px;
+      text-decoration:none; font-weight:600; font-size:0.95rem;
+      transition:var(--transition);
+    }
+    .btn-call { background:linear-gradient(135deg,var(--gold),var(--gold-light)); color:var(--navy); }
+    .btn-call:hover { transform:translateY(-3px); box-shadow:0 8px 25px rgba(201,168,76,0.4); }
+    .btn-wa { background:#25D366; color:var(--white); }
+    .btn-wa:hover { background:#1fba5a; transform:translateY(-3px); box-shadow:0 8px 25px rgba(37,211,102,0.35); }
+    .btn-dir { background:rgba(255,255,255,0.1); color:var(--white); border:2px solid rgba(255,255,255,0.25); }
+    .btn-dir:hover { background:rgba(255,255,255,0.18); transform:translateY(-3px); }
+    .map-placeholder {
+      background:rgba(255,255,255,0.06); border-radius:var(--radius);
+      height:200px; border:2px dashed rgba(201,168,76,0.3);
+      display:flex; align-items:center; justify-content:center;
+      flex-direction:column; gap:12px; margin-top:24px;
+      color:rgba(255,255,255,0.5); font-size:0.85rem;
+    }
+    .map-placeholder i { font-size:2rem; color:var(--gold); opacity:0.5; }
+
+    /* FOOTER */
+    footer {
+      background:var(--navy); text-align:center; padding:30px 5%;
+      border-top:1px solid rgba(201,168,76,0.2);
+    }
+    footer p { color:rgba(255,255,255,0.55); font-size:0.85rem; margin-bottom:8px; }
+    footer .footer-tag { color:var(--gold); font-weight:600; font-size:0.9rem; letter-spacing:3px; }
+
+    /* FLOATING BUTTONS */
+    .float-btns {
+      position:fixed; bottom:28px; right:24px; z-index:999;
+      display:flex; flex-direction:column; gap:14px;
+    }
+    .float-btn {
+      width:56px; height:56px; border-radius:50%;
+      display:flex; align-items:center; justify-content:center;
+      font-size:1.4rem; text-decoration:none; box-shadow:0 4px 20px rgba(0,0,0,0.3);
+      transition:var(--transition);
+    }
+    .float-wa { background:#25D366; color:var(--white); }
+    .float-wa:hover { transform:scale(1.12); box-shadow:0 6px 25px rgba(37,211,102,0.5); }
+    .float-call { background:var(--gold); color:var(--navy); }
+    .float-call:hover { transform:scale(1.12); box-shadow:0 6px 25px rgba(201,168,76,0.5); }
+
+    /* ANIMATIONS */
+    .fade-in { opacity:0; transform:translateY(30px); transition:opacity 0.7s ease, transform 0.7s ease; }
+    .fade-in.visible { opacity:1; transform:translateY(0); }
+
+    /* RESPONSIVE */
+    @media(max-width:900px) {
+      .about-grid, .contact-grid { grid-template-columns:1fr; gap:40px; }
+      .stats-grid { grid-template-columns:repeat(2,1fr); }
+      .skills-grid { grid-template-columns:1fr; }
+      .hero { flex-direction:column; text-align:center; }
+      .hero-content { max-width:100%; }
+      .hero-btns { justify-content:center; }
+      .hero-stats { justify-content:center; }
+      .hero-image { display:none; }
+      .section-header, .section-header .section-sub { text-align:center; }
+    }
+    @media(max-width:600px) {
+      .nav-links { display:none; }
+      .hamburger { display:flex; }
+      .nav-links.open {
+        display:flex; flex-direction:column;
+        position:absolute; top:70px; left:0; right:0;
+        background:var(--navy); padding:20px 5%; gap:16px;
+      }
+      .stats-grid { grid-template-columns:1fr 1fr; }
+      section { padding:70px 5%; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav id="navbar">
+  <div class="nav-logo">Drive<span>Mate</span></div>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="#about">About</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#testimonials">Reviews</a></li>
+    <li><a href="#contact" class="nav-cta">Book Now</a></li>
+  </ul>
+  <div class="hamburger" id="hamburger" onclick="toggleMenu()">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-content fade-in">
+    <div class="hero-badge"><i class="fas fa-shield-halved"></i> Verified Professional Driver</div>
+    <h1>Trusted Professional Driver with<br/><span>15+ Years</span> of Experience</h1>
+    <p>Providing safe, reliable, affordable, and comfortable travel for families, businesses, tourists, and outstation trips across Tamil Nadu.</p>
+    <div class="hero-btns">
+      <a href="tel:9659999944" class="btn-primary"><i class="fas fa-phone"></i> Call Now</a>
+      <a href="https://wa.me/919362665868" target="_blank" class="btn-whatsapp"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+      <a href="#contact" class="btn-secondary"><i class="fas fa-car"></i> Book a Ride</a>
+    </div>
+    <div class="hero-stats">
+      <div class="hero-stat"><span class="num">15+</span><span class="label">Years Exp.</span></div>
+      <div class="hero-stat"><span class="num">1000+</span><span class="label">Safe Trips</span></div>
+      <div class="hero-stat"><span class="num">24/7</span><span class="label">Available</span></div>
+      <div class="hero-stat"><span class="num">5★</span><span class="label">Rating</span></div>
+    </div>
+  </div>
+  <div class="hero-image">
+    <div class="hero-img-wrapper">
+      <div class="hero-img-placeholder">
+        <i class="fas fa-user-tie"></i>
+        <p>Driver Photo</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about" id="about">
+  <div class="about-grid">
+    <div class="about-img-wrapper fade-in">
+      <div class="about-img-ph">
+        <i class="fas fa-car-side"></i>
+        <p>Photo Placeholder</p>
+      </div>
+    </div>
+    <div class="fade-in">
+      <span class="section-tag">About Me</span>
+      <h2 class="section-title">Hi, I'm <span>P. Ramesh</span><br/>Your Trusted Driver</h2>
+      <p class="section-sub">With over 15 years of professional driving experience across Tamil Nadu, I am committed to providing safe, punctual, and comfortable journeys for every passenger.</p>
+      <div class="about-points">
+        <div class="about-point">
+          <i class="fas fa-shield-alt"></i>
+          <div><strong>Safety First</strong><span>Defensive driving techniques with zero-incident record</span></div>
+        </div>
+        <div class="about-point">
+          <i class="fas fa-clock"></i>
+          <div><strong>Always Punctual</strong><span>I value your time and ensure timely pick-ups and drops</span></div>
+        </div>
+        <div class="about-point">
+          <i class="fas fa-map-marked-alt"></i>
+          <div><strong>Route Expert</strong><span>Extensive knowledge of roads and routes across Tamil Nadu</span></div>
+        </div>
+        <div class="about-point">
+          <i class="fas fa-star"></i>
+          <div><strong>Customer Satisfaction</strong><span>Friendly, professional, and courteous service every trip</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<section class="stats">
+  <div class="stats-grid">
+    <div class="stat-card fade-in"><i class="fas fa-calendar-check"></i><div class="stat-num">15+</div><div class="stat-label">Years of Experience</div></div>
+    <div class="stat-card fade-in"><i class="fas fa-route"></i><div class="stat-num">1000+</div><div class="stat-label">Safe Trips Completed</div></div>
+    <div class="stat-card fade-in"><i class="fas fa-clock"></i><div class="stat-num">24/7</div><div class="stat-label">Available Anytime</div></div>
+    <div class="stat-card fade-in"><i class="fas fa-users"></i><div class="stat-num">500+</div><div class="stat-label">Happy Customers</div></div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services">
+  <div class="section-header fade-in">
+    <span class="section-tag">Services</span>
+    <h2 class="section-title">What I <span>Offer</span></h2>
+    <div class="divider"></div>
+    <p class="section-sub" style="margin-top:14px">Professional driving services for every occasion, available 24 hours a day across Tamil Nadu.</p>
+  </div>
+  <div class="services-grid">
+    <div class="service-card fade-in"><div class="service-icon"><i class="fas fa-plane-departure"></i></div><h3>Airport Pickup & Drop</h3><p>Timely and reliable airport transfers so you never miss a flight.</p></div>
+    <div class="service-card fade-in"><div class="service-icon"><i class="fas fa-city"></i></div><h3>Local City Travel</h3><p>Comfortable local travel within Coimbatore and nearby cities.</p></div>
+    <div class="service-card fade-in"><div class="service-icon"><i class="fas fa-road"></i></div><h3>Outstation Trips</h3><p>Safe and experienced long-distance driving across Tamil Nadu.</p></div>
+    <div class="service-card fade-in"><div class="service-icon"><i class="fas fa-briefcase"></i></div><h3>Corporate Travel</h3><p>Professional corporate travel with discretion and punctuality.</p></div>
+    <div class="service-card fade-in"><div class="service-icon"><i class="fas fa-users"></i></div><h3>Family Tours</h3><p>Comfortable and safe family trips with care and attention.</p></div>
+    <div class="service-card fade-in"><div class="service-icon"><i class="fas fa-ring"></i></div><h3>Wedding Transportation</h3><p>Elegant and reliable driving for your special occasions.</p></div>
+    <div class="service-card fade-in"><div class="service-icon"><i class="fas fa-hospital"></i></div><h3>Medical Visits</h3><p>Compassionate and careful driving for medical appointments.</p></div>
+    <div class="service-card fade-in"><div class="service-icon"><i class="fas fa-calendar-alt"></i></div><h3>Monthly Driver Service</h3><p>Hire me on a monthly basis for all your driving needs.</p></div>
+  </div>
+</section>
+
+<!-- WHY CHOOSE ME -->
+<section class="why" id="why">
+  <div class="section-header fade-in">
+    <span class="section-tag">Why Choose Me</span>
+    <h2 class="section-title">Reasons to <span>Trust Me</span></h2>
+    <div class="divider"></div>
+  </div>
+  <div class="why-grid">
+    <div class="why-card fade-in"><div class="why-icon"><i class="fas fa-medal"></i></div><div><h3>15+ Years Experience</h3><p>Proven track record on roads across Tamil Nadu</p></div></div>
+    <div class="why-card fade-in"><div class="why-icon"><i class="fas fa-shield-alt"></i></div><div><h3>Safe Driving</h3><p>Zero accidents, defensive driving always</p></div></div>
+    <div class="why-card fade-in"><div class="why-icon"><i class="fas fa-user-tie"></i></div><div><h3>Professional Conduct</h3><p>Always courteous, disciplined and well-presented</p></div></div>
+    <div class="why-card fade-in"><div class="why-icon"><i class="fas fa-tag"></i></div><div><h3>Affordable Pricing</h3><p>No middlemen – direct, fair, transparent pricing</p></div></div>
+    <div class="why-card fade-in"><div class="why-icon"><i class="fas fa-car"></i></div><div><h3>Clean & Comfortable</h3><p>Well-maintained vehicle for every journey</p></div></div>
+    <div class="why-card fade-in"><div class="why-icon"><i class="fas fa-clock"></i></div><div><h3>Flexible Timing</h3><p>Available 24/7 to fit your schedule</p></div></div>
+    <div class="why-card fade-in"><div class="why-icon"><i class="fas fa-handshake"></i></div><div><h3>Reliable Service</h3><p>Consistently dependable for every booking</p></div></div>
+    <div class="why-card fade-in"><div class="why-icon"><i class="fas fa-comments"></i></div><div><h3>Friendly Communication</h3><p>Easy to reach, quick to respond</p></div></div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+  <div class="section-header fade-in">
+    <span class="section-tag">Skills</span>
+    <h2 class="section-title">Professional <span>Expertise</span></h2>
+    <div class="divider"></div>
+  </div>
+  <div class="skills-grid">
+    <div class="skill-item fade-in">
+      <div class="skill-header"><span><i class="fas fa-shield-alt"></i> Defensive Driving</span><span class="pct">98%</span></div>
+      <div class="skill-bar"><div class="skill-fill" data-width="98"></div></div>
+    </div>
+    <div class="skill-item fade-in">
+      <div class="skill-header"><span><i class="fas fa-map-marked-alt"></i> GPS Navigation</span><span class="pct">95%</span></div>
+      <div class="skill-bar"><div class="skill-fill" data-width="95"></div></div>
+    </div>
+    <div class="skill-item fade-in">
+      <div class="skill-header"><span><i class="fas fa-route"></i> Route Planning</span><span class="pct">96%</span></div>
+      <div class="skill-bar"><div class="skill-fill" data-width="96"></div></div>
+    </div>
+    <div class="skill-item fade-in">
+      <div class="skill-header"><span><i class="fas fa-clock"></i> Time Management</span><span class="pct">97%</span></div>
+      <div class="skill-bar"><div class="skill-fill" data-width="97"></div></div>
+    </div>
+    <div class="skill-item fade-in">
+      <div class="skill-header"><span><i class="fas fa-star"></i> Customer Service</span><span class="pct">99%</span></div>
+      <div class="skill-bar"><div class="skill-fill" data-width="99"></div></div>
+    </div>
+    <div class="skill-item fade-in">
+      <div class="skill-header"><span><i class="fas fa-road"></i> Long Distance Driving</span><span class="pct">95%</span></div>
+      <div class="skill-bar"><div class="skill-fill" data-width="95"></div></div>
+    </div>
+    <div class="skill-item fade-in">
+      <div class="skill-header"><span><i class="fas fa-tools"></i> Vehicle Care</span><span class="pct">93%</span></div>
+      <div class="skill-bar"><div class="skill-fill" data-width="93"></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section class="gallery" id="gallery">
+  <div class="section-header fade-in">
+    <span class="section-tag">Gallery</span>
+    <h2 class="section-title">On the <span>Road</span></h2>
+    <div class="divider"></div>
+  </div>
+  <div class="gallery-grid">
+    <div class="gallery-item fade-in"><div class="gallery-ph"><i class="fas fa-user-tie"></i><p>Driver Photo</p></div></div>
+    <div class="gallery-item fade-in"><div class="gallery-ph"><i class="fas fa-car"></i><p>Vehicle</p></div></div>
+    <div class="gallery-item fade-in"><div class="gallery-ph"><i class="fas fa-road"></i><p>Road Trip</p></div></div>
+    <div class="gallery-item fade-in"><div class="gallery-ph"><i class="fas fa-handshake"></i><p>Customer Service</p></div></div>
+    <div class="gallery-item fade-in"><div class="gallery-ph"><i class="fas fa-mountain"></i><p>Scenic Travel</p></div></div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section id="testimonials">
+  <div class="section-header fade-in">
+    <span class="section-tag">Testimonials</span>
+    <h2 class="section-title">What Customers <span>Say</span></h2>
+    <div class="divider"></div>
+  </div>
+  <div class="testimonials-grid">
+    <div class="testimonial-card fade-in">
+      <div class="stars">★★★★★</div>
+      <p>"Ramesh is an exceptional driver. He picked us up on time for our early morning flight and was incredibly professional throughout. The ride was smooth, comfortable, and we felt completely safe. Highly recommend him for airport transfers!"</p>
+      <div class="reviewer"><div class="reviewer-avatar">A</div><div><div class="reviewer-name">Arun Kumar</div><div class="reviewer-loc">Coimbatore, Tamil Nadu</div></div></div>
+    </div>
+    <div class="testimonial-card fade-in">
+      <div class="stars">★★★★★</div>
+      <p>"We hired Ramesh for our family trip to Ooty and it was a wonderful experience. He is extremely patient, drives carefully on mountain roads, and was so polite with our kids. Best driver we have ever had for an outstation trip!"</p>
+      <div class="reviewer"><div class="reviewer-avatar">P</div><div><div class="reviewer-name">Priya Sundaram</div><div class="reviewer-loc">Tiruppur, Tamil Nadu</div></div></div>
+    </div>
+    <div class="testimonial-card fade-in">
+      <div class="stars">★★★★★</div>
+      <p>"I use Ramesh regularly for my corporate travel needs. He is always on time, maintains professional etiquette, and keeps the vehicle spotless. I have recommended him to all my colleagues. Truly a trustworthy and reliable driver."</p>
+      <div class="reviewer"><div class="reviewer-avatar">S</div><div><div class="reviewer-name">Senthil Raj</div><div class="reviewer-loc">Coimbatore, Tamil Nadu</div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <div class="section-header fade-in">
+    <span class="section-tag">Contact</span>
+    <h2 class="section-title">Book Your <span>Ride</span></h2>
+    <div class="divider"></div>
+    <p class="section-sub" style="margin-top:14px">Reach out directly — no app, no commission, just a reliable driver ready for you.</p>
+  </div>
+  <div class="contact-grid">
+    <div class="contact-info fade-in">
+      <div class="contact-item"><i class="fas fa-user"></i><div><strong>Driver Name</strong><span>P. Ramesh – Professional Driver</span></div></div>
+      <div class="contact-item"><i class="fas fa-phone"></i><div><strong>Primary Contact</strong><span>+91 96599 99944</span></div></div>
+      <div class="contact-item"><i class="fas fa-phone-alt"></i><div><strong>Alternate Contact</strong><span>+91 93626 65868</span></div></div>
+      <div class="contact-item"><i class="fas fa-map-marker-alt"></i><div><strong>Location</strong><span>Coimbatore, Tamil Nadu, India</span></div></div>
+      <div class="contact-item"><i class="fas fa-clock"></i><div><strong>Availability</strong><span>24 Hours / 7 Days a Week</span></div></div>
+      <div class="map-placeholder">
+        <i class="fas fa-map-marked-alt"></i>
+        <span>Google Maps – Coimbatore, Tamil Nadu</span>
+      </div>
+    </div>
+    <div class="contact-btns fade-in">
+      <a href="tel:9659999944" class="contact-btns-label btn-call"><i class="fas fa-phone"></i> Call Now – 9659999944</a>
+      <a href="https://wa.me/919362665868" target="_blank" class="btn-wa"><i class="fab fa-whatsapp"></i> WhatsApp – 9362665868</a>
+      <a href="https://maps.google.com/?q=Coimbatore,Tamil Nadu" target="_blank" class="btn-dir"><i class="fas fa-directions"></i> Get Directions</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p>Thank you for visiting.</p>
+  <div class="footer-tag">Safe &nbsp;•&nbsp; Reliable &nbsp;•&nbsp; Professional</div>
+  <p style="margin-top:12px;font-size:0.78rem">© 2025 P. Ramesh – Professional Driver, Coimbatore</p>
+</footer>
+
+<!-- FLOATING BUTTONS -->
+<div class="float-btns">
+  <a href="https://wa.me/919362665868" target="_blank" class="float-btn float-wa" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+  <a href="tel:9659999944" class="float-btn float-call" title="Call Now"><i class="fas fa-phone"></i></a>
+</div>
+
+<script>
+  // Mobile menu
+  function toggleMenu() {
+    document.getElementById('navLinks').classList.toggle('open');
+  }
+
+  // Scroll animations
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add('visible'); }
+    });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+  // Skill bars
+  const skillObserver = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.querySelectorAll('.skill-fill').forEach(bar => {
+          bar.style.width = bar.dataset.width + '%';
+        });
+      }
+    });
+  }, { threshold: 0.3 });
+  document.querySelectorAll('.skills-grid').forEach(el => skillObserver.observe(el));
+</script>
+</body>
+</html>
